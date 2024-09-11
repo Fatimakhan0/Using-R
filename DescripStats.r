@@ -1,9 +1,0 @@
-df=data.frame(x=c(1,4,4,5,6,7,10,12),
-              y=c(2,2,3,3,4,5,11,11),
-              z=c(8,9,9,9,10,13,15,17))
-df
-summary(df)
-summary(df[1,c('x','z')])
-sapply(df,sd,na.rm=TRUE)
-res=quantile(df$x,probs=c(0,0.25,0.5,0.75,1))
-res
