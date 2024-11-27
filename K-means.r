@@ -1,5 +1,5 @@
 #K- Means
-#Classification algorithm
+#Clustering algorithm
 
 datak = read.csv("D:/DS/iris.csv")
 
