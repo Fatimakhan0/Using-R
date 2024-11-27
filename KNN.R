@@ -3,6 +3,12 @@
 
 datam = read.csv("D:/7086/PimaIndians.csv")
 
+#To clear all variables
+rm(list=ls())
+
+#Setting working directory to 'D' drive where data is present
+setwd("D:/")
+
 #Loading package 'class' for KNN
 library('class')
 #Loading package 'caret' for confusion matrix for validation
