@@ -1,0 +1,11 @@
+d=read.csv("https://raw.githubusercontent.com/npradaschnor/Pima-Indians-Diabetes-Dataset/refs/heads/master/diabetes.csv")
+head(d)
+library(caret)
+library(class)
+d$Outcome=factor(d$Outcome)
+train=d[1:500,]
+test=d[501:768,]
+mod=knn(train[,-9],test[,-9],train$Outcome,k=2)
+tab=table(mod,test$Outcome)
+sum(diag(tab))/nrow(test)
+confusionMatrix(mod,test$Outcome)

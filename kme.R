@@ -1,0 +1,12 @@
+d=read.csv("https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
+head(d)
+library(factoextra)
+library(cluster)
+head(d)
+data=df[,1:4]
+set.seed(5)
+fviz_nbclust(data,kmeans,method="wss")
+pre=kmeans(data,centers=3,nstart=25)
+fviz_cluster(pre,data=data,geom="point",stand=FALSE)
+fin=cbind(data,cluster=pre$cluster)
+fin
